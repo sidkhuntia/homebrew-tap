@@ -5,23 +5,41 @@
 class EchoDesk < Formula
   desc "Local-first proof desk for reviewing code written by coding agents"
   homepage "https://github.com/sidkhuntia/echo"
-  version "0.0.2"
-  depends_on :macos
+  version "0.1.0"
 
-  if Hardware::CPU.intel?
-    url "https://github.com/sidkhuntia/echo/releases/download/v0.0.2/echo-desk_0.0.2_darwin_amd64.tar.gz"
-    sha256 "d0ce5e7c3a9965a4a6b5b22d1b30b59f553f2625e9c371ac467670a7dbc5ebaf"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/sidkhuntia/echo/releases/download/v0.1.0/echo-desk_0.1.0_darwin_amd64.tar.gz"
+      sha256 "e14c2ccd3aecf22095fd193dcbfb2b32bf4ab65b9e55f18667c689b130a1c0b0"
 
-    define_method(:install) do
-      bin.install "echo-desk"
+      define_method(:install) do
+        bin.install "echo-desk"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/sidkhuntia/echo/releases/download/v0.1.0/echo-desk_0.1.0_darwin_arm64.tar.gz"
+      sha256 "467adde7adcd01b910bfde6d25339d176fd78e8851dc34a66c3a3b710391a156"
+
+      define_method(:install) do
+        bin.install "echo-desk"
+      end
     end
   end
-  if Hardware::CPU.arm?
-    url "https://github.com/sidkhuntia/echo/releases/download/v0.0.2/echo-desk_0.0.2_darwin_arm64.tar.gz"
-    sha256 "249bb6b97de418c76786c5f6a92900f5707cda808a306993ce8a222af6005f67"
 
-    define_method(:install) do
-      bin.install "echo-desk"
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/sidkhuntia/echo/releases/download/v0.1.0/echo-desk_0.1.0_linux_amd64.tar.gz"
+      sha256 "03de084e660c780ddd8b5e2ea3ec57f4df382f64e306435eb629778ddd2f2065"
+      define_method(:install) do
+        bin.install "echo-desk"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/sidkhuntia/echo/releases/download/v0.1.0/echo-desk_0.1.0_linux_arm64.tar.gz"
+      sha256 "077691bca72c10f8328cb1ab1823afd7868266f17392b35621fc7c0eb27d322c"
+      define_method(:install) do
+        bin.install "echo-desk"
+      end
     end
   end
 
