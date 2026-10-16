@@ -5,20 +5,20 @@
 class EchoDesk < Formula
   desc "Local-first proof desk for reviewing code written by coding agents"
   homepage "https://github.com/sidkhuntia/echo"
-  version "0.10.0"
+  version "0.11.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sidkhuntia/echo/releases/download/v0.10.0/echo-desk_0.10.0_darwin_amd64.tar.gz"
-      sha256 "d0791c0d0790ce64a6527a8c9b6af376818c9afb36445becf921e3715cadd1db"
+      url "https://github.com/sidkhuntia/echo/releases/download/v0.11.1/echo-desk_0.11.1_darwin_amd64.tar.gz"
+      sha256 "8a39f3d728db13a42270506946886ff711afd15e72595a99e1d4acb52231d8fc"
 
       define_method(:install) do
         bin.install "echo-desk"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/sidkhuntia/echo/releases/download/v0.10.0/echo-desk_0.10.0_darwin_arm64.tar.gz"
-      sha256 "bbb695ec984ce69af4c90ec2e54e406e136a85c7c7178e9fc08d7968dd6a4b2b"
+      url "https://github.com/sidkhuntia/echo/releases/download/v0.11.1/echo-desk_0.11.1_darwin_arm64.tar.gz"
+      sha256 "60c409b6e48d9f27b87b6b437ce002e038ec9cf651ee5e694627670f4d9677e9"
 
       define_method(:install) do
         bin.install "echo-desk"
@@ -28,15 +28,15 @@ class EchoDesk < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sidkhuntia/echo/releases/download/v0.10.0/echo-desk_0.10.0_linux_amd64.tar.gz"
-      sha256 "7ae34efb90950114f16e73eda831690e32cff38caf9dbf53a308c9a5cbfb02b8"
+      url "https://github.com/sidkhuntia/echo/releases/download/v0.11.1/echo-desk_0.11.1_linux_amd64.tar.gz"
+      sha256 "0495e8c680526b2215c4c7f384c252bce01cbba83022250cc0cb65bdd450b90a"
       define_method(:install) do
         bin.install "echo-desk"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sidkhuntia/echo/releases/download/v0.10.0/echo-desk_0.10.0_linux_arm64.tar.gz"
-      sha256 "81f390d0f59a04f9ebfd5df54aba3555e738a1141f765b16b3714bb6d8e7d904"
+      url "https://github.com/sidkhuntia/echo/releases/download/v0.11.1/echo-desk_0.11.1_linux_arm64.tar.gz"
+      sha256 "7c4f4dfa33d47718e4d61bbe19c806bdb6cab3dde034f68670dcb177fbd8ff0e"
       define_method(:install) do
         bin.install "echo-desk"
       end
